@@ -39,19 +39,22 @@ public class ItemServiceApplication {
 	 *
 	 * 사용 시, 실제 DB 는 내려주어야함.
 	 * 메모리 DB 에 테이블도 만들어 주어야함. (src/test/resources/schema.sql)
+
+	 * spring 임배디드 db 사용 시, 따로 설정 안해줘도 됨.
+	 * 사실 스프링이 따로 서버 설정 안해주면 임베디드 모드로 알아서 설정해줌.
 	 */
 
-	@Bean
-	@Profile("test")
-	public DataSource dataSource() {
-		log.info("메모리 데이터베이스 초기화");
-
-		DriverManagerDataSource dataSource = new DriverManagerDataSource();
-		dataSource.setDriverClassName("org.h2.Driver");
-		dataSource.setUrl("jdbc:h2:mem:test;DB_CLOSE_DELAY=-1");
-		dataSource.setUsername("sa");
-		dataSource.setPassword("");
-		return dataSource;
-	}
+//	@Bean
+//	@Profile("test")
+//	public DataSource dataSource() {
+//		log.info("메모리 데이터베이스 초기화");
+//
+//		DriverManagerDataSource dataSource = new DriverManagerDataSource();
+//		dataSource.setDriverClassName("org.h2.Driver");
+//		dataSource.setUrl("jdbc:h2:mem:test;DB_CLOSE_DELAY=-1");
+//		dataSource.setUsername("sa");
+//		dataSource.setPassword("");
+//		return dataSource;
+//	}
 
 }
