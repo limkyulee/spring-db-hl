@@ -9,6 +9,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.Commit;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.annotation.Transactional;
@@ -20,10 +21,15 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * @Transactinal - test 에서의 사용
+ * @Transactional - test 에서의 사용
  * 스프링은 테스트를 트랜잭션 안에서 실행하고, 테스트가 끝나면 트랜잭션을 자동으로 롤백시킴.
+ *
+ * @Commit
+ * 데이터베이스에 데이터가 잘 보관되었는지 최종 결과를 눈으로 확인하고 싶을 때, 사용가능.
+ * 테스트 종료 후 롤백 대신 커밋이 호출됨.
  */
 
+//@Commit
 @Transactional
 @SpringBootTest
 class ItemRepositoryTest {
