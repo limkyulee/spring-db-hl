@@ -41,6 +41,9 @@ dependencies {
 	//테스트에서 lombok 사용
 	testCompileOnly 'org.projectlombok:lombok'
 	testAnnotationProcessor 'org.projectlombok:lombok'
+
+	testImplementation 'org.mockito:mockito-inline:5.2.0' // 또는 최신 버전
+
 }
 
 tasks.named('test') {
